@@ -3,6 +3,11 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+#root route for homepage
+@app.get("/")
+def read_root():
+  return {"message": "Hello, FASTAPI is running!"}
+
 class PayrollInput(BaseModel):
     employee_name: str
     hours_worked: float
